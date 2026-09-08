@@ -1,0 +1,35 @@
+SEN-HARP Core v0.5 — environment and validation record
+=========================================================
+
+Model scope:
+SEN-HARP Core v0.5: household carbon pricing, Green Deal recycling and Job
+Guarantee, explicit GDP accounting, factual-style UBS substitution, minimal
+material-use accounting and a compensated post-growth working-time reduction.
+
+Project path:
+Portable. Run from the repository root containing senharp_core/.
+
+Operating system:
+Windows 10/11 (win32 platform reported by pytest)
+
+Python:
+3.12.x (validated with 3.12.10)
+
+Python executable used by pytest:
+.venv\Scripts\python.exe
+
+Validation date:
+2026-09-07
+
+Pytest command:
+python -m pytest tests -q --tb=short -p no:cacheprovider
+
+Latest confirmed result:
+84 passed, 14 third-party deprecation warnings
+
+Notes:
+- The suite now contains 84 tests. The warnings arise from Matplotlib using
+  deprecated Pyparsing aliases; they do not represent model failures.
+- The launch notebook creates a fresh outputs/seven_experiments/run_environment.txt
+  containing the current timestamp, Python executable, platform and pytest output.
+- Update this file when the model, Python environment or test result changes.

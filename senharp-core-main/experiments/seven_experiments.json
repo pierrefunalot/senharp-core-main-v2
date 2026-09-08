@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "model_version": "SEN-HARP Core v0.5 — household carbon pricing, factual credit calibration and GDP accounting",
+  "description": "Seven-experiment protocol comparing Baseline and three transition packages under fixed and endogenous political regimes.",
+  "project_root_reference": "portable: repository root containing senharp_core/",
+  "run_control": {
+    "number_of_periods": 26,
+    "period_start": 0,
+    "period_end": 25,
+    "election_periods": [
+      4,
+      9,
+      14,
+      19,
+      24
+    ],
+    "public_service_spending_growth": 0.0
+  },
+  "documented_model_defaults": {
+    "number_households": 600,
+    "number_firms": 120,
+    "number_banks": 10
+  },
+  "shared_parameter_overrides": {
+    "seed": 1761,
+    "needs_public_service_component_enabled": false
+  },
+  "notes": [
+    "The FIXED and ENDOGENOUS experiments within each package use identical economic parameters.",
+    "Carbon Tax and Green Deal package parameters use the current defaults defined in senharp_core.parameters.Parameters unless overridden below.",
+    "The former post-growth emissions shortcut is neutralised so environmental effects arise from model mechanisms."
+  ],
+  "experiments": [
+    {
+      "id": "E0_baseline",
+      "label": "Baseline",
+      "scenario": "BASELINE",
+      "policy_mode": "OFF",
+      "parameter_overrides": {}
+    },
+    {
+      "id": "E1_carbon_tax_fixed",
+      "label": "Carbon Tax — fixed",
+      "scenario": "CARBON_TAX",
+      "policy_mode": "FIXED",
+      "parameter_overrides": {}
+    },
+    {
+      "id": "E2_carbon_tax_vote",
+      "label": "Carbon Tax — endogenous vote",
+      "scenario": "CARBON_TAX",
+      "policy_mode": "ENDOGENOUS",
+      "parameter_overrides": {}
+    },
+    {
+      "id": "E3_green_deal_fixed",
+      "label": "Green Deal — fixed",
+      "scenario": "GREEN_DEAL",
+      "policy_mode": "FIXED",
+      "parameter_overrides": {
+        "green_deal_public_investment_share": 0.5,
+        "green_deal_public_capital_service_efficiency": 1.0
+      }
+    },
+    {
+      "id": "E4_green_deal_vote",
+      "label": "Green Deal — endogenous vote",
+      "scenario": "GREEN_DEAL",
+      "policy_mode": "ENDOGENOUS",
+      "parameter_overrides": {
+        "green_deal_public_investment_share": 0.5,
+        "green_deal_public_capital_service_efficiency": 1.0
+      }
+    },
+    {
+      "id": "E5_post_growth_fixed",
+      "label": "Post-Growth — fixed",
+      "scenario": "POST_GROWTH",
+      "policy_mode": "FIXED",
+      "parameter_overrides": {
+        "post_growth_brown_credit_cap": 0.2,
+        "post_growth_brown_capital_retention": 0.96,
+        "post_growth_basic_income_ratio": 0.0,
+        "post_growth_basic_services_ratio": 0.2,
+        "post_growth_basic_services_no_respend_rate": 0.1,
+        "government_unemployment_stabilizer": 0.0,
+        "post_growth_emissions_multiplier": 1.0
+      }
+    },
+    {
+      "id": "E6_post_growth_vote",
+      "label": "Post-Growth — endogenous vote",
+      "scenario": "POST_GROWTH",
+      "policy_mode": "ENDOGENOUS",
+      "parameter_overrides": {
+        "post_growth_brown_credit_cap": 0.2,
+        "post_growth_brown_capital_retention": 0.96,
+        "post_growth_basic_income_ratio": 0.0,
+        "post_growth_basic_services_ratio": 0.2,
+        "post_growth_basic_services_no_respend_rate": 0.1,
+        "government_unemployment_stabilizer": 0.0,
+        "post_growth_emissions_multiplier": 1.0
+      }
+    }
+  ]
+}
